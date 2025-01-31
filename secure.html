@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Manager</title>
+</head>
+<body>
+
+<h1>Password Storage Example</h1>
+
+<!-- Form to input and save password -->
+<div id="save-password-section">
+    <label for="password">Enter Password:</label>
+    <input type="password" id="password" placeholder="Enter your password">
+    <button onclick="savePassword()">Save Password</button>
+</div>
+
+<!-- Form to retrieve saved password -->
+<div id="retrieve-password-section">
+    <button onclick="retrievePassword()">Retrieve Saved Password</button>
+</div>
+
+<!-- Display saved password -->
+<div id="password-display"></div>
+
+<script>
+    // Function to save password to localStorage
+    function savePassword() {
+        const password = document.getElementById('password').value;
+        
+        if (password) {
+            // Store the password securely (using localStorage here for demonstration)
+            localStorage.setItem('userPassword', password);
+            alert('Password has been saved!');
+            document.getElementById('password').value = ''; // Clear the input field
+        } else {
+            alert('Please enter a valid password');
+        }
+    }
+
+    // Function to retrieve the saved password
+    function retrievePassword() {
+        const savedPassword = localStorage.getItem('userPassword');
+        
+        if (savedPassword) {
+            document.getElementById('password-display').innerHTML = `Saved Password: ${savedPassword}`;
+        } else {
+            document.getElementById('password-display').innerHTML = 'No password saved.';
+        }
+    }
+</script>
+
+</body>
+</html>
