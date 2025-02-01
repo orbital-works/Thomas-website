@@ -8,7 +8,7 @@
     <title>Document</title>
 
     <style>
-        .info{
+        .info {
             text-align: center;
         }
     </style>
@@ -18,35 +18,43 @@
 <div class="info">
 
     <body style="background-color:powderblue;"></body>
-    <div class="box">
-    </div>
-    <br>
-    <canvas id="mycanvas" width="400" height="550" style="border: 1px solid black;">
-    </canvas>
-    <div>
-        <br>
-        <a href="pages.html">
-            <button style="width: 50px; height: 30px; font-size: 15px; box-shadow: 0 8px 16px black; position: relative; left: -177px;" onclick="back()">Back</button>
-            <script>
-                function back() {
-                    window.history.back();
-                }
-            </script>
-        </a>
-        <br>
-        <div class="accept">
-        <input type="file" id="user" capture="user" accept="images" style="position: relative; top: -30px; left: 60px;">
-        <a href="preimage.html">
-            <button onclick="back()" style="position: relative; top: -30px; left: 50px;">Send</button>
-            <script>
-                function back() {
-                    window.history.back();
-                }
-            </script>
-        </a>
-    </div>
-    </div>
 </div>
+<br>
+
+
+<camera-capture></camera-capture>
+
+
+<div>
+    <button onclick="back()" style="position: relative; top: -30px; left: 50px;">Send</button>
+    <script>
+        function back() {
+            window.history.back();
+        }
+    </script>
+    </a>
+</div>
+</div>
+</div>
+
+
+<script src="./capture.js"></script>
+<script>
+    const cameraCapture = document.querySelector('camera-capture');
+
+    cameraCapture.addEventListener('image-captured', (event) => {
+        const imageData = event.detail.imageData;
+        console.log('Captured image data:', imageData);
+
+        // You can now use the imageData (e.g., send it to a server, display it, etc.)
+
+        // Example: Create an <a> element to download the image
+        const link = document.createElement('a');
+        link.href = imageData;
+        link.download = 'captured_image.png'; // Set the filename
+        link.click(); // Programmatically click the link to trigger download
+    });
+</script>
 </body>
 
 </html>
