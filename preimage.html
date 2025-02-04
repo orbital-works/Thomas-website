@@ -16,6 +16,7 @@
             <br>
             <br>
             <br>
+            <img id="imagePreview" style="max-width: 300px; display: none;" alt="Image Preview">
             <h1>Do you want to send this photo?</h1>
             <br>
             <br>
@@ -23,19 +24,34 @@
             <br>
             <br>
             <h1>"image preview sample"</h1>
-                <br>
-                <br>
-                <br>
-                <a href="autenticate.html">
-                    <div class="centre">
-                        <button style="width: 150px; height: 80px; font-size: 25px; box-shadow: 0 8px 16px black;"
-                            onclick="back()">Send</button>
-                </a>
-                <br>
-                    <a href="new.cap.html">
-                        <div class="centre">
-                            <button style="width: 150px; height: 80px; font-size: 25px; box-shadow: 0 8px 16px black;"
-                                onclick="back()">Re-take</button>
-                    </a>
+            <br>
+            <br>
+            <br>
+            <a href="autenticate.html">
+                <div class="centre">
+                    <button style="width: 150px; height: 80px; font-size: 25px; box-shadow: 0 8px 16px black;"
+                        onclick="back()">Send</button>
+            </a>
+            <br>
+            <a href="pages.html">
+                <div class="centre">
+                    <button style="width: 150px; height: 80px; font-size: 25px; box-shadow: 0 8px 16px black;"
+                        onclick="back()">Re-take</button>
+            </a>
+
+            <script>
+                let file = sessionStorage.getItem("selected-file");
+                if (file) {
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        const imagePreview = document.getElementById('imagePreview');
+                        imagePreview.src = e.target.result;
+                        imagePreview.style.display = 'block';  // Show the image
+                    };
+
+                    reader.readAsDataURL(file);  // Read the file as a Data URL (base64)
+                }
+            </script>
 
 </html>
