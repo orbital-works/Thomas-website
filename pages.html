@@ -61,33 +61,43 @@
                     style="width: 750px; height: 250px; font-size: 150px; box-shadow: 0 8px 16px black;">Catalogue</button>
             </a>
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
     </body>
-
 
     <script>
         const elem = document.getElementById("img");
         elem.addEventListener("change", () => {
             if (elem.files.length == 1) {
                 console.log("File selected: ", elem.files[0]);
-                sessionStorage.setItem("selected-file",elem.files[0]);
-                alert (elem.files[0]);
-                window.location.replace ("./preimage.html")
+                sessionStorage.setItem("selected-file", elem.files[0]);
+                alert(elem.files[0]);
+                window.location.replace("./preimage.html")
             }
         });
-        //elem.click();
-        document.getElementById('img').addEventListener('change', function(event) {
-    const file = event.target.files[0];
-    
-    if (file) {
-        sessionStorage.setItem("selected-file",elem.files[0]);
-        const reader = new FileReader();
+        elem.click();
+        document.getElementById('img').addEventListener('change', function (event) {
+            const file = event.target.files[0];
 
-  // Show the image
-        };
+            if (file) {
+                sessionStorage.setItem("selected-file", elem.files[0]);
+                const reader = new FileReader();
 
-        reader.readAsDataURL(file);  // Read the file as a Data URL (base64)
-    }
-);
+            };
+
+            reader.readAsDataURL(file);  // Read the file as a Data URL (base64)
+        }
+        );
     </script>
 
 </html>
