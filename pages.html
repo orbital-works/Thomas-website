@@ -60,36 +60,47 @@
                 <button
                     style="width: 750px; height: 250px; font-size: 150px; box-shadow: 0 8px 16px black;">Catalogue</button>
             </a>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <a
-        href="newcontact.html">
-        <button
-            style="width: 750px; height: 250px; font-size: 150px; box-shadow: 0 8px 16px black;">Contact</button>
-    </a>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <a href="newcontact.html">
+                <button
+                    style="width: 750px; height: 250px; font-size: 150px; box-shadow: 0 8px 16px black;">Contact</button>
+            </a>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
     </body>
 
     <script>
         const imageFile = document.getElementById('imageFile');
-        imageFile.addEventListener('change', function() {
-          const file = this.files[0];
-          const reader = new FileReader();
-          reader.addEventListener('load', function(event) {
-            localStorage.setItem('imageData', event.target.result);
-            window.location.href = './preimage.html';
-          });
-          reader.readAsDataURL(file);
+        imageFile.addEventListener('change', function () {
+            const file = this.files[0];
+            const reader = new FileReader();
+            reader.addEventListener('load', function (event) {
+                localStorage.setItem('imageData', event.target.result);
+                window.location.href = './preimage.html';
+            });
+            reader.readAsDataURL(file);
         });
-      </script>
+    </script>
 
 </html>
