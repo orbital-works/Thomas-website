@@ -62,30 +62,60 @@
         <br>
         <br>
         <br>
-        <input type="text" class="form-control" placeholder="Name of company"
+        <form id="companyForm">
+        <input id="companyName" class="form-control" placeholder="Name of company"
             style="height: 25px; width: 300px; border-radius: 10px;">
         <br>
         <br>
-        <input type="email" class="form-control" placeholder="Email"
+        <input id="email" type="email" class="form-control" placeholder="Email"
             style="height: 25px; width: 300px; border-radius: 10px;">
         <br>
         <br>
-        <input type="number" class="form-control" placeholder="Phone number"
+        <input id="phone" type="number" class="form-control" placeholder="Phone number"
             style="height: 25px; width: 300px; border-radius: 10px;">
         <br>
         <br>
-        <input type="address" class="form-control" placeholder="Address"
+        <input id="address" class="form-control" placeholder="Address"
             style="height: 25px; width: 300px; border-radius: 10px;">
+            <br>
+            <br>
+            <button type="submit" style="position: relative; left: 100px; width: 100px; height: 40px; font-size: 20px;">Next</button>
+        </form>
         <br>
         <br>
         <br>
         <br>
         <br>
         <br>
-        <a href="last.html">
-            <button style="position: relative; left: 100px; width: 100px; height: 40px; font-size: 20px;">Next</button>
-        </a>
-</body>
+        <script>
+            document.getElementById('companyForm').addEventListener('submit', function (event) {
+              event.preventDefault(); // Prevent the default form submission
+        // get the supplier name
+
+                // Get the URL parameter
+                const urlParams = new URLSearchParams(window.location.search);
+        const supplierName = urlParams.get('supplierName');
+
+
+
+
+              // Get values from the form
+              const companyName = document.getElementById('companyName').value;
+              const email = document.getElementById('email').value;
+              const phone = document.getElementById('phone').value;
+              const address = document.getElementById('address').value;
+        
+              // Save data to sessionStorage
+              sessionStorage.setItem('companyName', companyName);
+              sessionStorage.setItem('email', email);
+              sessionStorage.setItem('phone', phone);
+              sessionStorage.setItem('address', address);
+              sessionStorage.setItem('supplierName',supplierName);
+        
+              // Optionally redirect to another page
+              window.location.href = 'last.html'; // Redirect to the display page
+            });
+          </script>
 </body>
 
 </html>

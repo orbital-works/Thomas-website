@@ -52,8 +52,8 @@
         <br>
         <h3 style="position: relative; text-align: center;">Chosen supplier:</h3>
         <br>
-            <button
-                style="position: relative; left: 10px; width: 280px; height: 40px; font-size: 20px;">Freash fish</button>
+            <button id="supplierName"
+                style="position: relative; left: 10px; width: 280px; height: 40px; font-size: 20px;"></button>
         <br>
         <br>
         <br>
@@ -61,16 +61,16 @@
         <h3 style="position: relative; text-align: center;">Details:</h3>
         <br>
         <br>
-        <input type="text" class="form-control" placeholder="Name of company"  style="height: 25px; width: 300px; border-radius: 10px;">
+        <input id="companyName" type="text" class="form-control" placeholder="Name of company"  style="height: 25px; width: 300px; border-radius: 10px;">
         <br>
         <br>
-        <input type="email" class="form-control" placeholder="Email"  style="height: 25px; width: 300px; border-radius: 10px;">
+        <input id="email" type="email" class="form-control" placeholder="Email"  style="height: 25px; width: 300px; border-radius: 10px;">
         <br>
         <br>
-        <input type="number" class="form-control" placeholder="Phone number"  style="height: 25px; width: 300px; border-radius: 10px;">
+        <input id="phone" type="number" class="form-control" placeholder="Phone number"  style="height: 25px; width: 300px; border-radius: 10px;">
         <br>
         <br>
-        <input type="address" class="form-control" placeholder="Address"  style="height: 25px; width: 300px; border-radius: 10px;">
+        <input id="address" type="address" class="form-control" placeholder="Address"  style="height: 25px; width: 300px; border-radius: 10px;">
         <br>
         <br>
         <br>
@@ -86,6 +86,22 @@
         <br>
         <br>
         <br>
+        <script>
+            // Get data from sessionStorage
+            const companyName = sessionStorage.getItem('companyName');
+            const email = sessionStorage.getItem('email');
+            const phone = sessionStorage.getItem('phone');
+            const address = sessionStorage.getItem('address');
+            const supplierName = sessionStorage.getItem('supplierName');
+
+        
+            // Display the data
+            document.getElementById('companyName').value = companyName ? companyName : 'Not available';
+            document.getElementById('email').value = email ? email : 'Not available';
+            document.getElementById('phone').value = phone ? phone : 'Not available';
+            document.getElementById('address').value = address ? address : 'Not available';
+            document.getElementById('supplierName').innerText = supplierName ? supplierName : 'Not available';
+          </script>
 </body>
 
 </html>
