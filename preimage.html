@@ -11,6 +11,39 @@
         <title>image preview</title>
     </head>
 
+    <style>
+        .button {
+            padding: 15px 25px;
+            font-size: 24px;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            color: black;
+            background-color: lightgray;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+            width: 700px;
+            height: 200px;
+            font-size: 130px;
+            box-shadow: 0 8px 16px black;
+            width: 750px;
+            height: 250px;
+            font-size: 150px;
+            box-shadow: 0 8px 16px black;
+        }
+
+        .button:hover {
+            background-color: #3e8e41
+        }
+
+        .button:active {
+            background-color: lightgray;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+    </style>
+
     <body>
         <div class="centre">
             <br>
@@ -47,9 +80,7 @@
             <br>
             <br>
             <a href="autenticate.html">
-                <div class="centre">
-                    <button style="width: 750px; height: 250px; font-size: 150px; box-shadow: 0 8px 16px black;"
-                        onclick="back()">Send</button>
+                <button class="button">Send</button>
             </a>
             <br>
             <br>
@@ -63,9 +94,8 @@
             <br>
             <br>
             <a href="pages.html">
-                <div class="centre">
-                    <button style="width: 750px; height: 250px; font-size: 150px; box-shadow: 0 8px 16px black;"
-                        onclick="back()">Re-take</button>
+                <button class="button">Re-take</button>
+                
             </a>
             <br>
             <br>
@@ -80,9 +110,9 @@
             <br>
 
             <script>
-              const imageData = localStorage.getItem('imageData');
-              const image = document.getElementById('imagePreview');
-              image.src = imageData;
+                const imageData = localStorage.getItem('imageData');
+                const image = document.getElementById('imagePreview');
+                image.src = imageData;
             </script>
 
 </html>

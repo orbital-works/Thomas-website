@@ -52,8 +52,8 @@
         <br>
         <h3 style="position: relative; text-align: center;">Chosen supplier:</h3>
         <br>
-            <button id="supplierName"
-                style="position: relative; left: 10px; width: 280px; height: 40px; font-size: 20px;"></button>
+        <button id="supplierName"
+            style="position: relative; left: 10px; width: 280px; height: 40px; font-size: 20px;"></button>
         <br>
         <br>
         <br>
@@ -61,24 +61,48 @@
         <h3 style="position: relative; text-align: center;">Details:</h3>
         <br>
         <br>
-        <input id="companyName" type="text" class="form-control" placeholder="Name of company"  style="height: 25px; width: 300px; border-radius: 10px;">
+        <input id="companyName" type="text" class="form-control" placeholder="Name of company"
+            style="height: 25px; width: 300px; border-radius: 10px;">
         <br>
         <br>
-        <input id="email" type="email" class="form-control" placeholder="Email"  style="height: 25px; width: 300px; border-radius: 10px;">
+        <input id="email" type="email" class="form-control" placeholder="Email"
+            style="height: 25px; width: 300px; border-radius: 10px;">
         <br>
         <br>
-        <input id="phone" type="number" class="form-control" placeholder="Phone number"  style="height: 25px; width: 300px; border-radius: 10px;">
+        <input id="phone" type="number" class="form-control" placeholder="Phone number"
+            style="height: 25px; width: 300px; border-radius: 10px;">
         <br>
         <br>
-        <input id="address" type="address" class="form-control" placeholder="Address"  style="height: 25px; width: 300px; border-radius: 10px;">
+        <input id="address" type="address" class="form-control" placeholder="Address"
+            style="height: 25px; width: 300px; border-radius: 10px;">
         <br>
         <br>
         <br>
         <br>
         <br>
         <br>
+        <style>
+            .btn {
+                background-color: deepskyblue;
+                border: none;
+                color: white;
+                padding: 16px 32px;
+                text-align: center;
+                font-size: 16px;
+                margin: 4px 2px;
+                opacity: 0.6;
+                transition: 0.3s;
+                position: relative;
+                border-radius: 10px;
+                width: 300px;
+            }
+
+            .btn:hover {
+                opacity: 1
+            }
+        </style>
         <a href="requestsent.html">
-            <button style="position: relative; left: 100px; width: 100px; height: 40px; font-size: 20px;">Send</button>
+            <button class="btn">Send</button>
         </a>
         <br>
         <br>
@@ -94,14 +118,14 @@
             const address = sessionStorage.getItem('address');
             const supplierName = sessionStorage.getItem('supplierName');
 
-        
+
             // Display the data
             document.getElementById('companyName').value = companyName ? companyName : 'Not available';
             document.getElementById('email').value = email ? email : 'Not available';
             document.getElementById('phone').value = phone ? phone : 'Not available';
             document.getElementById('address').value = address ? address : 'Not available';
             document.getElementById('supplierName').innerText = supplierName ? supplierName : 'Not available';
-          </script>
+        </script>
 </body>
 
 </html>
