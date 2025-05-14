@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css1">
+    <script defer src="index.js"></script>
+    <title>Add Supplier</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: boarder-box;
+    }
+
+    body {
+        min-height: 100vh;
+        background: powderblue;
+        display: flex;
+        font-family: san-serif;
+    }
+
+    .form-group {
+        margin: auto;
+        width: 100px;
+        max-width: 90%;
+        font-family: sans-serif;
+    }
+
+    .form-group {
+        width: 300px;
+        height: 690px;
+        padding: 30px;
+        background: white;
+        border-radius: 4px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="form-group" style="background-color: white; box-shadow: 0 8px 16px black;">
+
+        <a href="firstpage.html">
+            <button onclick="back()"
+                style="height: 30px; width: 60px; font-size: 15px; position: relative; top: -5px;">Back</button>
+            <script>
+                function back() {
+                    window.history.back();
+                }
+            </script>
+        </a>
+        </a>
+        <br>
+        <h1 style="position: relative; top: -10px; font-size: 25px;">Please</h1>
+        <h1 style="position: relative; top: -10px; font-size: 25px;">choose a selected supplier</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <select id="itemDropdown" onchange="showDescription()" style="width: 300px; font-size: 30px;">
+            <option value="JJ">JJ foodservice</a>
+            <option value="Butchers">Butchers</option>
+            <option value="Bidfoods">Bidfoods</option>
+            <option value="Wholefoods">Wholefoods</option>
+            <option value="Oliver">Oliver Kay</option>
+            <option value="Costco">Costco</option>
+            <option value="Harvest">Harvest</option>
+            <option value="Brakes">Brakes</option>
+            <option value="Conect">Conect group</option>
+            <option value="Bestway">Bestway wholesale</option>
+            <option value="Freash">Freash fish</option>
+        </select>
+
+  <div id="description"></div>
+
+  <script>
+    const descriptions = {
+      JJ: "A sweet, crisp fruit that is great for snacking or baking.",
+      Butchers:"a",
+      Bidfoods: "b",
+      Wholefoods: "c",
+      Oliver: "d",
+      Costco: "e",
+      Harvest: "f",
+      Brakes: "g",
+      Brakes: "h",
+      Conect: "i",
+      Bestway: "j",
+      Freash: "k",
+
+    };
+
+    function showDescription() {
+      const dropdown = document.getElementById("itemDropdown");
+      const selectedValue = dropdown.value;
+      const descriptionDiv = document.getElementById("description");
+
+      if (descriptions[selectedValue]) {
+        descriptionDiv.textContent = descriptions[selectedValue];
+      } else {
+        descriptionDiv.textContent = "";
+      }
+    }
+  </script>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <a href="new.html">
+            <button class="btn">Next</button>
+        </a>
+        <style>
+            .btn {
+                background-color: deepskyblue;
+                border: none;
+                color: white;
+                padding: 16px 32px;
+                text-align: center;
+                font-size: 16px;
+                margin: 4px 2px;
+                opacity: 0.6;
+                transition: 0.3s;
+                position: relative;
+                border-radius: 10px;
+                width: 300px;
+            }
+
+            .btn:hover {
+                opacity: 1
+            }
+        </style>
+</body>
+
+</html>
