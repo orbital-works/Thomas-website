@@ -65,53 +65,47 @@
         <br>
         <br>
         <select id="itemDropdown" onchange="showDescription()" style="width: 300px; font-size: 30px;">
-            <option value="JJ">JJ foodservice</a>
-            <option value="Butchers">Butchers</option>
-            <option value="Bidfoods">Bidfoods</option>
-            <option value="Wholefoods">Wholefoods</option>
-            <option value="Oliver">Oliver Kay</option>
-            <option value="Costco">Costco</option>
-            <option value="Harvest">Harvest</option>
-            <option value="Brakes">Brakes</option>
-            <option value="Conect">Conect group</option>
-            <option value="Bestway">Bestway wholesale</option>
-            <option value="Freash">Freash fish</option>
+            <option value="">Select a supplier</a>
+            <option value="JJ" data-img="JJ.jpeg">JJ foodservice</a>
+            <option value="Butchers" data-img="Butcher.png">Butchers</option>
+            <option value="Bidfoods" data-img="bid.png">Bidfoods</option>
+            <option value="Wholefoods" data-img="whole.png">Wholefoods</option>
+            <option value="Oliver" data-img="Oliver.png">Oliver Kay</option>
+            <option value="Costco" data-img="Costco.png">Costco</option>
+            <option value="Harvest" data-img="Harvest.png">Harvest</option>
+            <option value="Brakes" data-img="Brakes.png">Brakes</option>
+            <option value="Conect" data-img="conect.png">Conect group</option>
+            <option value="Bestway" data-img="best.png">Bestway wholesale</option>
         </select>
-
-  <div id="description"></div>
-
-  <script>
-    const descriptions = {
-      JJ: "A sweet, crisp fruit that is great for snacking or baking.",
-      Butchers:"a",
-      Bidfoods: "b",
-      Wholefoods: "c",
-      Oliver: "d",
-      Costco: "e",
-      Harvest: "f",
-      Brakes: "g",
-      Brakes: "h",
-      Conect: "i",
-      Bestway: "j",
-      Freash: "k",
-
-    };
-
-    function showDescription() {
-      const dropdown = document.getElementById("itemDropdown");
-      const selectedValue = dropdown.value;
-      const descriptionDiv = document.getElementById("description");
-
-      if (descriptions[selectedValue]) {
-        descriptionDiv.textContent = descriptions[selectedValue];
-      } else {
-        descriptionDiv.textContent = "";
-      }
-    }
-  </script>
         <br>
         <br>
         <br>
+        <br>
+        <div id="description" style="height: 40px;"></div>
+
+        <script>
+
+            function showDescription() {
+                const dropdown = document.getElementById("itemDropdown");
+                const selectedOption = dropdown.options[dropdown.selectedIndex];
+                const selectedValue = dropdown.value;
+                const imageforselectedvalue = "./images/" + selectedOption.dataset.img;
+                const descriptionDiv = document.getElementById("description");
+
+
+
+                const img = document.createElement('img');
+
+
+                img.src = imageforselectedvalue;
+                img.alt = 'Description of the image';
+                img.width = 300;
+                img.height = 200;
+
+                descriptionDiv.innerHTML = '';
+                descriptionDiv.append(img);
+            }
+        </script>
         <br>
         <br>
         <br>
