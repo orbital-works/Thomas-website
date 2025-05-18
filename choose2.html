@@ -104,6 +104,7 @@
 
                 descriptionDiv.innerHTML = '';
                 descriptionDiv.append(img);
+                sessionStorage.setItem('supplierName', selectedValue);
             }
         </script>
         <br>
@@ -127,6 +128,8 @@
         <a href="new.html">
             <button class="btn">Next</button>
         </a>
+
+
         <style>
             .btn {
                 background-color: deepskyblue;
