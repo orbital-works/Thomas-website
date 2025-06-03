@@ -102,30 +102,44 @@
             }
         </style>
         <a href="requestsent.html">
-            <button class="btn">Send</button>
+            <button class="btn" onclick="addSupplier()">Add supplier</button>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <script>
+                // Get data from sessionStorage
+                const companyName = sessionStorage.getItem('companyName');
+                const email = sessionStorage.getItem('email');
+                const phone = sessionStorage.getItem('phone');
+                const address = sessionStorage.getItem('address');
+                const supplierName = sessionStorage.getItem('supplierName');
+
+
+                // Display the data
+                document.getElementById('companyName').value = companyName ? companyName : 'Not available';
+                document.getElementById('email').value = email ? email : 'Not available';
+                document.getElementById('phone').value = phone ? phone : 'Not available';
+                document.getElementById('address').value = address ? address : 'Not available';
+                document.getElementById('supplierName').innerText = supplierName ? supplierName : 'Not available';
+
+                function addSupplier() {
+                    const newSupplier = {
+                        supplierName: document.getElementById(supplierName).innerText,
+                        companyName: document.getElementById(companyName).value,
+                        email: document.getElementById(email).value,
+                        phone: document.getElementById(phone).value,
+                        address: document.getElementById(address).value
+                    };
+                    let supplier = JSON.parse(localStorage.getItem(suppliers))
+                    supplier.push(newSupplier);
+                    localStorage.setItem(suppliers, JSON.stringify(suppliers));
+                    alert("supplier added")
+                }
+            </script>
         </a>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <script>
-            // Get data from sessionStorage
-            const companyName = sessionStorage.getItem('companyName');
-            const email = sessionStorage.getItem('email');
-            const phone = sessionStorage.getItem('phone');
-            const address = sessionStorage.getItem('address');
-            const supplierName = sessionStorage.getItem('supplierName');
-
-
-            // Display the data
-            document.getElementById('companyName').value = companyName ? companyName : 'Not available';
-            document.getElementById('email').value = email ? email : 'Not available';
-            document.getElementById('phone').value = phone ? phone : 'Not available';
-            document.getElementById('address').value = address ? address : 'Not available';
-            document.getElementById('supplierName').innerText = supplierName ? supplierName : 'Not available';
-        </script>
 </body>
 
 </html>
